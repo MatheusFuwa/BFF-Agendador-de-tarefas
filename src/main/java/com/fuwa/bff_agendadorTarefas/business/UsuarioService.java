@@ -7,6 +7,7 @@ import com.fuwa.bff_agendadorTarefas.business.DTO.in.UsuarioDTORequest;
 import com.fuwa.bff_agendadorTarefas.business.DTO.out.EnderecoDTOResponse;
 import com.fuwa.bff_agendadorTarefas.business.DTO.out.TelefoneDTOResponse;
 import com.fuwa.bff_agendadorTarefas.business.DTO.out.UsuarioDTOResponse;
+import com.fuwa.bff_agendadorTarefas.business.DTO.out.ViaCepDTOResponse;
 import com.fuwa.bff_agendadorTarefas.infraestructure.client.UsuarioClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -47,5 +48,8 @@ public class UsuarioService {
 
     public TelefoneDTOResponse CadastraTelefone(String token, TelefoneDTORequest dto){
         return client.cadastraTelefone(dto, token);
+    }
+    public ViaCepDTOResponse BuscarEnderecoPorCep(String cep){
+        return client.BuscarDadosCep(cep);
     }
 }
